@@ -1,0 +1,61 @@
+{
+  "name": "react-redux-boilerplate",
+  "version": "0.0.0",
+  "description": "A react/redux boilerplate",
+  "scripts": {
+    "clean": "rm -rf dist && rm -rf build",
+    "build": "npm run clean && npm run lint && npm run sass && webpack",
+    "dist": "NODE_ENV=production npm run build",
+    "lint": "eslint src",
+    "start": "./bin/dev",
+    "test": "karma start --single-run",
+    "test-watch": "karma start",
+    "sass": "gulp sass",
+    "sass-watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keats/react-redux-boilerplate.git"
+  },
+  "author": "Vincent Prouillet",
+  "bugs": {
+    "url": "https://github.com/Keats/react-redux-boilerplate/issues"
+  },
+  "homepage": "https://github.com/Keats/react-redux-boilerplate#readme",
+  "devDependencies": {
+    "babel": "^5.8.21",
+    "babel-core": "^5.8.21",
+    "babel-eslint": "^4.0.5",
+    "babel-loader": "^5.3.2",
+    "babel-runtime": "^5.8.20",
+    "chai": "^3.2.0",
+    "eslint": "^1.0.0",
+    "eslint-config-airbnb": "0.0.7",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-react": "^3.2.2",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-sass": "^2.0.4",
+    "html-webpack-plugin": "^1.6.1",
+    "karma": "^0.13.8",
+    "karma-chai": "^0.1.0",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-mocha": "^0.2.0",
+    "karma-webpack": "^1.7.0",
+    "mocha": "^2.2.5",
+    "react-addons-test-utils": "^0.14.0-beta3",
+    "react-hot-loader": "^1.2.8",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "dependencies": {
+    "immutable": "^3.7.4",
+    "react": "^0.14.0-beta3",
+    "react-dom": "^0.14.0-beta3",
+    "react-redux": "^0.9.0",
+    "react-router": "^1.0.0-beta3",
+    "redux": "^1.0.0",
+    "redux-react-router": "^0.4.0",
+    "redux-thunk": "^0.1.0"
+  }
+}

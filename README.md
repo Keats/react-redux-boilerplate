@@ -10,10 +10,13 @@ Boilerplate containing a starter environment for react/redux dev:
 - react
 - redux
 - react-redux
+- redux-devtools
 - immutablejs
 
 A bunch of tasks exist, look at `package.json` to see them. The main one used while developing is `npm start`.
 This starts webpack (including a server on localhost:3000), gulp and karma and watch over the files.
+
+redux-devtools is in the devDependencies of the project but since there is no code it won't show up. Look at the example project linked in the example section below to see how to implement it.
 
 
 ## Install

@@ -16,14 +16,21 @@ A bunch of tasks exist, look at `package.json` to see them. The main one used wh
 This starts webpack (including a server on localhost:3000), gulp and karma and watch over the files.
 
 
+## Install
+
+```bash
+$ npm install --python=python2
+```
+Ignore the python argument if your default python is python2.
+
+
 ## Example
 See https://github.com/Keats/react-example for an example a tiny app following that boilerplate.
 
 
 ## Notes
-The script in bin is only tested on linux, it won't work on windows.
+The script in bin is only tested on linux, it won't work on windows and I'm not sure about OSX.
 
 
 ## Known issues
-Karma doesn't refresh some cached files and thus run some stale tests.
-There is an issue on that: https://github.com/karma-runner/karma/issues/1087
+Karma doesn't refresh some cached files and thus is running some stale tests. There is an issue on that: https://github.com/karma-runner/karma/issues/1087

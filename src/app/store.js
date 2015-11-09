@@ -1,28 +1,30 @@
 import {
-  createStore, applyMiddleware, combineReducers, compose
+  createStore, applyMiddleware, combineReducers, compose,
 } from "redux";
 import {
   routerStateReducer,
-  reduxReactRouter
-} from "redux-react-router";
+  reduxReactRouter,
+} from "redux-router";
 import createHistory from "history/lib/createBrowserHistory";
 import thunk from "redux-thunk";
 
-import routes from "./routes";
+import * as reducers from "./reducers/index";
 
 
 const reducer = combineReducers({
   router: routerStateReducer,
+  ...reducers,
 });
-const middlewares = [thunk];
 
+// Thunk middleware allows actions to return a function f instead of a
+// new state. f accepts a `dispatch` and an optional `getState`
+// function to invoke new actions. Used e.g. for async XHR actions.
+// (https://github.com/gaearon/redux-thunk)
+const middlewares = [thunk];
 
 let finalCreateStore;
 
-const reduxRouter = reduxReactRouter({
-  routes,
-  createHistory,
-});
+const reduxRouter = reduxReactRouter({ createHistory });
 
 if (__PRODUCTION__) {
   finalCreateStore = compose(
@@ -49,8 +51,5 @@ export default function configureStore(initialState) {
       store.replaceReducer(nextReducer);
     });
   }
-
   return store;
 }
-
-
